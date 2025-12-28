@@ -3,8 +3,8 @@
 1. Change your permissions to an elevated role, if you have permissions issues when doing the below steps. Or simply run as adminstrator when needing to install the necessary s/w.
 2. To see if you have administrative privileges, try using commands like net user %USERNAME% or whoami /groups to see if you are part of the Administrators group. 
 3. Remove any limit on windows 260 character filename sizes. 
-For an automated fix, run the following PowerShell command as Administrator: 
-i. Press Win + R, type regedit, and press Enter. 
+For an automated fix, run the following PowerShell command as Administrator:  
+i. Press Win + R, type regedit, and press Enter.  
 ii. Navigate to:
 ```
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem
