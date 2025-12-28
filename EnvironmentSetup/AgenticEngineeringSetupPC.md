@@ -50,12 +50,12 @@ Restart PC to apply changes.
     1.  In the project root folder create a new file called .env (this will be your environment vars for your project, which includes the key)
     2.  Add the following line to the .env file: ```OPENAI_API_KEY=<your openai api key you copied earlier>```  
 
-This now completes the set up of your Agentic AI Engineering confguration, which incorporates a one time setup of:
+### This now completes the set up of your Agentic AI Engineering confguration, which incorporates a one time setup of:
 1. Windows long filenames enabling
 2. Setup of Cursor
 3. Setup of UV
 4. Set up of OpenAI API key and funding account  
 
-For project specific:#
+### For project specific:
 1. run uv sync to project root to create the projects .venv virtual environment.
 2. set up of .env file and add the openai api key configuraton 
