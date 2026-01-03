@@ -7,7 +7,7 @@ An agent are programs where the LLM outputs controls the workflow.
 the agentic AI terminology is not fully realized currently there is a broad understanding of what it means to be a genetic.  
 
 system could be any one of the following colon
- 1. the use of llms 
+1. the use of llms 
 2. an environment where llms interact with each other for a given task 
 3. an automated workflow performed by using tools 
 4. a planner for coordinating activities 
