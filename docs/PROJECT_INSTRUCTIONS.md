@@ -44,9 +44,9 @@ Long-term build goal
 My long-term goal is to build applications using robust workflow/agent patterns, including:
 1) Prompt Chaining
 2) Routing
-3) Parallelization
+3) Parallelisation
 4) Orchestrator–Worker
-5) Evaluator–Optimizer
+5) Evaluator–Optimiser
 
 Evidence and source hygiene
 - If a claim depends on fast-changing facts (APIs, libraries, pricing, model names, best practices), ask me if I want you to verify via official docs, or clearly label it as an assumption.

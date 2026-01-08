@@ -1,4 +1,4 @@
-# Setup instructions for PC (Example using OpenAI API) 
+# Setup instructions for PC 
 
 1. Change your permissions to an elevated role, if you have permissions issues when doing the below steps. Or simply run as adminstrator when needing to install the necessary s/w.
 2. To see if you have administrative privileges, try using commands like net user %USERNAME% or whoami /groups to see if you are part of the Administrators group. 
@@ -30,7 +30,7 @@ Restart PC to apply changes.
       1. Click on the Source Control icon in the left sidebar (or press Ctrl+Shift+G)
       2. Click on "Clone Repository" button
       3. Select "Clone from GitHub" (you may be prompted to sign in to GitHub)
-      4. Authorize Cursor to access your GitHub account when prompted
+      4. Authorise Cursor to access your GitHub account when prompted
       5. A list of repositories accessible to you will appear
       6. Select the repository you want to work with (e.g., AI-Engineering)
       7. Choose a local folder location to clone the repository
@@ -76,9 +76,6 @@ Restart PC to apply changes.
       ```  
 
 8. Fund your credit balance and setup your API key with OpenAI:   
-   
-   **Note**: This example demonstrates setup using the OpenAI API. However, you can use any API that you have access to, as long as you are able to retrieve the API key or set/configure an API key and use it in the configuration.
-   
    1. login to account:https://platform.openai.com/  
    2. On the portal, click the gear icon top right
    3. on the left pane click Billing, top up your balance as needed, depending expected token usage. (If you don't want to be automatically billed everytime you reach a minumum set threshold, set Auto recharge to off).  
@@ -103,10 +100,8 @@ Restart PC to apply changes.
      ```
      pip config set global.index-url https://<your-artifactory-url>/artifactory/api/pypi/pypi-virtual/simple
      ```
-     (Replace `<artifactory-url>` with Artifactory URL. See Artifactory documentation for onboarding and setup.)
+     (Replace `<your-artifactory-url>` with your organisation's Artifactory URL. 
    - This ensures all Python packages come from the MBS approved repository for production deployments
-  
-  NB: The use of artifactory for python packages it seems is not being always used, but from a compliance point of view this needs to be determined on how it is enforced.
 
 ### For Development and Experimentation:
 
@@ -128,4 +123,106 @@ Restart PC to apply changes.
 3. Set up .env file and add the OpenAI API key configuration
 
 ### For productionisation only:
-1. Configure pip to use organisation's Artifactory repository (NBS approved repository required for production deployments) 
+1. Configure pip to use organisation's Artifactory repository (MBS approved repository required for production deployments) 
+
+---
+
+## Free API Alternatives (With Limitations)
+
+While the setup above uses OpenAI's paid API service, there are several free alternatives you can explore for experimentation and learning purposes. These options have limitations but are great for getting started:
+
+### 1. **OpenAI Free Tier / Trial Credits**
+   - **What it is**: OpenAI often provides free trial credits for new accounts
+   - **Limitations**: 
+     - Limited to a specific amount of credits (typically $5-18 worth)
+     - Credits expire after a certain period
+     - Rate limits apply
+   - **How to use**: Sign up at https://platform.openai.com/ and check if trial credits are available
+   - **Best for**: Initial experimentation and testing
+
+### 2. **Ollama (Local AI Models)**
+   - **What it is**: Run large language models locally on your PC
+   - **Limitations**: 
+     - Requires significant RAM (8GB+ recommended, 16GB+ for larger models)
+     - Slower than cloud APIs (depends on your hardware)
+     - Limited to models that fit in your system memory
+   - **How to use**: 
+     - Download from https://ollama.ai/
+     - Install and run models like `ollama run llama2`, `ollama run mistral`, etc.
+     - Use the local API endpoint instead of OpenAI's API
+   - **Best for**: Privacy-sensitive projects, offline development, learning how models work
+
+### 3. **Hugging Face Inference API (Free Tier)**
+   - **What it is**: Free access to various AI models via Hugging Face's API
+   - **Limitations**: 
+     - Rate limited (typically 1,000 requests/month on free tier)
+     - Slower response times compared to paid services
+     - Some advanced models may not be available on free tier
+   - **How to use**: 
+     - Sign up at https://huggingface.co/
+     - Get your API token from settings
+     - Use their Inference API endpoints
+   - **Best for**: Experimenting with different models, research projects
+
+### 4. **Google Colab (Free GPU Access)**
+   - **What it is**: Free Jupyter notebook environment with GPU access
+   - **Limitations**: 
+     - Limited GPU hours per day/week
+     - Sessions timeout after inactivity
+     - Not suitable for production applications
+     - Requires Google account
+   - **How to use**: 
+     - Visit https://colab.research.google.com/
+     - Create a new notebook
+     - Use free GPU runtime to run models
+   - **Best for**: Running experiments, training small models, learning
+
+### 5. **LM Studio (Local Models with UI)**
+   - **What it is**: User-friendly desktop application to run LLMs locally
+   - **Limitations**: 
+     - Same hardware requirements as Ollama
+     - Performance depends on your CPU/GPU
+     - Model download sizes can be large (several GB)
+   - **How to use**: 
+     - Download from https://lmstudio.ai/
+     - Install and download models through the UI
+     - Use the local server API
+   - **Best for**: Beginners who want a GUI, local development
+
+### 6. **Groq (Free Tier)**
+   - **What it is**: Fast inference API with free tier access
+   - **Limitations**: 
+     - Rate limits on free tier
+     - Limited requests per minute/day
+     - May require waitlist or approval
+   - **How to use**: 
+     - Sign up at https://groq.com/
+     - Get API key from dashboard
+     - Use similar to OpenAI API
+   - **Best for**: Fast inference needs, testing high-throughput scenarios
+
+### 7. **Together AI (Free Tier)**
+   - **What it is**: Open-source model inference API
+   - **Limitations**: 
+     - Free tier has usage limits
+     - Rate limits apply
+   - **How to use**: 
+     - Sign up at https://together.ai/
+     - Get API key and use their endpoints
+   - **Best for**: Access to open-source models like Llama, Mistral
+
+### 8. **Replicate (Free Tier)**
+   - **What it is**: Run AI models in the cloud with free credits
+   - **Limitations**: 
+     - Limited free credits per month
+     - Pay-as-you-go after free tier
+   - **How to use**: 
+     - Sign up at https://replicate.com/
+     - Use their API to run various models
+   - **Best for**: Trying different models without local setup
+
+### Recommendations:
+- **For absolute beginners**: Start with OpenAI's free trial credits or Hugging Face Inference API
+- **For privacy/offline work**: Use Ollama or LM Studio for local models
+- **For experimentation**: Try Google Colab for GPU-accelerated experiments
+- **For production-like testing**: Use Groq or Together AI free tiers for faster inference

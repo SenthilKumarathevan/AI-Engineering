@@ -4,7 +4,7 @@
 An agent are programs where the LLM outputs controls the workflow.
 
 ## Ambiguity in Agentic AI
-the agentic AI terminology is not fully realized currently there is a broad understanding of what it means to be a genetic.  
+the agentic AI terminology is not fully realised currently there is a broad understanding of what it means to be a genetic.  
 
 system could be any one of the following colon
 1. the use of llms 
