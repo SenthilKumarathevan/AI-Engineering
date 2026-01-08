@@ -21,7 +21,7 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name
 Restart PC to apply changes.  
 
 4. Install Git (if not already installed) https://git-scm.com/download/win  
-5. Install Cursor IDE: https://git-scm.com/download/win  
+5. Install Cursor IDE:  https://cursor.com/download  
    1. Setup an account (if you don't have one. It is free)
    2. As a minimum install the following extensions -> Open extensions (View >> extensions)  
       1. Search for python, and when the results show, click on the ms-python one, and Install it if not already installed  
