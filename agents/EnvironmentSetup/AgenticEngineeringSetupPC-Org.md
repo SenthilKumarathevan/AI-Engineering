@@ -100,7 +100,7 @@ Restart PC to apply changes.
      ```
      pip config set global.index-url https://<your-artifactory-url>/artifactory/api/pypi/pypi-virtual/simple
      ```
-     (Replace `<your-artifactory-url>` with your organisation's Artifactory URL. 
+     (Replace `<your-artifactory-url>` with your organisation's Artifactory URL). 
    - This ensures all Python packages come from the MBS approved repository for production deployments
 
 ### For Development and Experimentation:
