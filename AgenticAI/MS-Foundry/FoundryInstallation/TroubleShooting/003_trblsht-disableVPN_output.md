@@ -92,4 +92,58 @@ If `foundry service restart` fails due to permissions or an unsupported command:
   * process-level restart without admin rights, or
   * a per-process proxy bypass scoped only to the Foundry CLI
 
-This keeps changes minimal and reversible.
+This keeps changes minimal and reversible.  
+
+If this doesn't work do:
+
+# Bypassing Corporate Proxy for Foundry CLI (Session-Scoped)
+
+## Main goal
+
+Stop the **Foundry CLI** from using the corporate proxy for `127.0.0.1` by overriding proxy-related **environment variables** in the **current PowerShell session**, then re-test local service connectivity.
+
+---
+
+## One-step action (PowerShell)
+
+Bypass any configured proxy for localhost **only for this PowerShell session**.
+
+Copy and paste **exactly** the following:
+
+```powershell
+# Show any proxy env vars currently affecting the CLI
+Get-ChildItem Env: | Where-Object Name -match 'PROXY|NO_PROXY' | Sort-Object Name
+
+"`n--- Setting localhost bypass for this PowerShell session ---`n"
+
+# Force localhost/loopback to bypass any proxy for this session
+$env:NO_PROXY = "localhost,127.0.0.1"
+$env:no_proxy = $env:NO_PROXY
+$env:HTTP_PROXY = ""
+$env:http_proxy = ""
+$env:HTTPS_PROXY = ""
+$env:https_proxy = ""
+
+# Re-test Foundry local service connectivity
+foundry service status
+````
+
+---
+
+## What to paste back
+
+After running the commands above, paste:
+
+1. The **environment variable listing output** from the first command
+2. The **full output** of:
+
+   ```powershell
+   foundry service status
+   ```
+
+---
+
+## Next step (if this works)
+
+If this resolves the service status issue, the next step will be to make the **localhost proxy bypass persistent at the user level**, without requiring admin rights.
+
