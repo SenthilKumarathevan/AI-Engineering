@@ -31,10 +31,7 @@ Run **exactly** the following in PowerShell:
 
 ```powershell
 $log = Join-Path $env:TEMP ("foundry-model-list-" + (Get-Date -Format "yyyyMMdd-HHmmss") + ".log")
-
-# Run with verbose output and capture stdout + stderr
-& foundry --verbose model list *>&1 | Tee-Object -FilePath $log
-
+& foundry model list --verbose --log-level Debug *>&1 | Tee-Object -FilePath $log
 "`nLog saved to: $log"
 ````
 
